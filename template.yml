@@ -1,14 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: ND9991 C3 L4 
 Resources:
-  EC2Instance:
-    Type: 'AWS::EC2::Instance'
-    Properties:
-      SecurityGroups:
-        - InstanceSecurityGroup     
-      KeyName: udacitytestkey
-      ImageId: 'ami-06ae0e97bcb59038c' 
-      InstanceType: t3.micro
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
@@ -18,3 +10,10 @@ Resources:
           FromPort: '22'
           ToPort: '22'
           CidrIp: 0.0.0.0/0
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      SecurityGroups: Fn::GetAttr InstanceSecurityGroup.GroupId     
+      KeyName: udacitytestkey
+      ImageId: 'ami-06ae0e97bcb59038c' 
+      InstanceType: t3.micro
