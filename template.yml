@@ -13,7 +13,8 @@ Resources:
   EC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      SecurityGroups: Fn::GetAttr InstanceSecurityGroup.GroupId     
+      SecurityGroups: 
+        - Ref: InstanceSecurityGroup.GroupId     
       KeyName: udacitytestkey
       ImageId: 'ami-06ae0e97bcb59038c' 
       InstanceType: t3.micro
