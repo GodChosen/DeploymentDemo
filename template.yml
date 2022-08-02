@@ -16,5 +16,5 @@ Resources:
       SecurityGroups: 
         - Ref: InstanceSecurityGroup    
       KeyName: udacitytestkey
-      ImageId: 'ami-06ae0e97bcb59038c' 
+      ImageId: 'ami-0b0ea68c435eb488d' 
       InstanceType: t3.micro
