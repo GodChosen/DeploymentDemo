@@ -14,7 +14,7 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       SecurityGroups: 
-        - Ref: InstanceSecurityGroup.GroupId     
+        - Ref: InstanceSecurityGroup    
       KeyName: udacitytestkey
       ImageId: 'ami-06ae0e97bcb59038c' 
       InstanceType: t3.micro
